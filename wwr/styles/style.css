@@ -1,0 +1,81 @@
+#content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+nav a {
+    text-align: center;
+    color: black
+}
+nav a:hover {
+    background-color: white (--nav-hover-background-color);
+    color: black(--nav-hover-link-color);
+}
+.home-title {color: black;
+}
+h4 {
+    color: black;
+}
+.book,
+.join {
+    background-color: white (--nav-background-color);
+    color: black (--nav-link-color);
+    text-decoration: none;
+}
+.book:hover {
+    background-color: white (--nav-hover-background-color);
+    color: black (--nav-hover-link-color);
+}
+.join:hover {
+    background-color: white (--nav-hover-background-color);
+    color: black (--nav-hover-link-color);
+}
+.msg h2 {
+    color: var(--headline-color-on-color);
+}
+.msg p {
+    color: var(--paragraph-color-on-color);
+}
+footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+footer a {
+    color: black;
+    text-decoration: none;
+}
+footer a:hover {
+    color: black (--nav-hover-background-color);
+}
+footer p a:hover {
+    text-decoration: underline;
+}
+#hero-msg h1 {
+    text-align: center;
+}
+#hero-msg h4 {
+    text-align: center;
+}
+.button-box {
+    text-align: center;
+}
+main section {
+    text-align: center;
+}
+#background {
+    height: 725px;
+}
+body {
+    background-color: #485696; 
+}
+header {
+    background-color:#f3ffbd(20,30,13, .7);
+}
+nav a:hover {
+    background-color: #0ad3ff;
+}
+#hero-img {
+    width: 100%;
+}
+.icon {
+    width: 80px;
+}
