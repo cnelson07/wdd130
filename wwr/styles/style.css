@@ -16,7 +16,7 @@ nav a:hover {
     background-color: var(--nav-hover-background-color, white);
     color: var(--nav-hover-link-color, black);
 }
-.home-title {color: black;
+.home-title {color: white;
     font-family: 'Arial', 'Georgia', sans-serif; 
     font-size: 2em; 
     margin-top: 10px;  
