@@ -1,0 +1,104 @@
+/* home-style.css
+   Expected minimal HTML structure:
+   <body>
+     <div class="site">
+       <nav class="top-nav">
+         <a class="nav-item">HOME</a>
+         <a class="nav-item">HOW TO PLAY</a>
+         <a class="nav-item">GEAR & COURTS</a>
+       </nav>
+
+       <main class="container">
+         <header class="hero"><h1>HOME</h1></header>
+
+         <section class="grid">
+           <div class="col left">
+             <div class="card image"></div>
+             <div class="card paragraph"></div>
+             <div class="card image"></div>
+           </div>
+
+           <div class="col right">
+             <div class="card paragraph"></div>
+             <div class="card image"></div>
+             <div class="card paragraph"></div>
+           </div>
+         </section>
+
+         <footer class="signature">SIGNATURE</footer>
+       </main>
+     </div>
+   </body>
+*/
+
+/* Reset & base */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: "Helvetica Neue", Arial, sans-serif; background:#fff; color:#111; }
+
+/* outer framed site to mimic the heavy wireframe border */
+.site { max-width: 920px; margin: 18px auto; border: 6px solid #000; background: #fff; }
+
+/* top nav (three buttons) */
+.top-nav { display:flex; border-bottom:6px solid #000; }
+.top-nav .nav-item {
+  flex:1;
+  text-align:center;
+  padding: 18px 6px;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:14px;
+  border-left:3px solid rgba(0,0,0,0.0); /* visual spacing */
+}
+.top-nav .nav-item:first-child { border-left:0; }
+.top-nav .nav-item:not(:last-child) { border-right:3px solid #000; }
+
+/* main container */
+.container { padding: 18px; }
+
+/* hero / title box */
+.hero {
+  border:6px solid #000;
+  padding: 18px 12px;
+  text-align: center;
+  margin: 12px 0 18px;
+}
+.hero h1 { margin:0; font-size:56px; letter-spacing:2px; font-weight:700; }
+
+/* two-column grid area */
+.grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items:start; }
+
+/* column stacks */
+.col { display:flex; flex-direction:column; gap:18px; }
+
+/* card styles (images and paragraph placeholders) */
+.card {
+  border:6px solid #000;
+  min-height:130px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#fff;
+}
+.card.image { min-height:160px; }      /* image placeholder taller */
+.card.paragraph { min-height:120px; }  /* paragraph block */
+
+/* signature footer */
+.signature {
+  margin-top:18px;
+  border-top:6px solid #000;
+  padding:14px;
+  border-left:6px solid #000;
+  border-right:6px solid #000;
+  border-bottom:6px solid #000;
+  text-align:left;
+  font-size:14px;
+}
+
+/* responsive: single column for small screens */
+@media (max-width:740px){
+  .grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size:40px; }
+  .top-nav .nav-item { padding:12px; font-size:13px; }
+}
