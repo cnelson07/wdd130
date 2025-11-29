@@ -12,7 +12,7 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 672px; /* tailwind max-w-2xl = 42rem = 672px */
   margin: 1.25rem auto; /* mx-auto, top/bottom spacing */
   padding: 1rem; /* p-4 */
-  background: #ffffff; /* bg-white */
+  background: white; /* bg-white */
   border-radius: 6px;
 }
 
@@ -44,7 +44,7 @@ header nav a {
 }
 header nav a:hover {
   background: #efefef;
-  border-color: #d1d5db;
+  border-color: #0AD3FF;
 }
 
 /* --- Hero area --- */
@@ -56,7 +56,7 @@ header nav a:hover {
   align-items: center;
 }
 #hero-box {
-  border: 4px solid #000;
+  border: 4px solid #0AD3FF;
   overflow: hidden;
   background: #f9fafb;
   aspect-ratio: 16 / 9;
@@ -69,11 +69,11 @@ header nav a:hover {
 .home-title {
   font-size: 2rem;
   margin: 0 0 0.25rem 0;
-  color: #374151; /* gray-700 */
+  color: #AD8A64; /* gray-700 */
   font-weight: 800;
   letter-spacing: .18em; /* tracking-widest */
 }
-#hero-msg h4 { margin: 0 0 0.75rem 0; color: #6b7280; font-weight: 600; }
+#hero-msg h4 { margin: 0 0 0.75rem 0; color: black; font-weight: 600; }
 
 /* button box / call to action */
 .button-box { margin-top: 0.5rem; }
@@ -103,7 +103,7 @@ main.home-grid {
 main.home-grid section,
 main.home-grid .card,
 main.home-grid .info-card {
-  border: 4px solid #000;
+  border: 4px solid #485696;
   background: #f3f4f6;
   padding: 1rem;
   display: flex;
@@ -156,7 +156,7 @@ section.msg {
    select it by matching its alt text substring */
 img[alt*="People playing pickleball"] {
   width: 100%;
-  border: 4px solid #000;
+  border: 4px solid #F3FFBD;
   display: block;
 }
 
@@ -164,13 +164,13 @@ img[alt*="People playing pickleball"] {
 #background {
   grid-column: 1 / -1;
   height: 60px;
-  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  background: linear-gradient(90deg, #485696(0,0,0,0.04), #0AD3FF(0,0,0,0.02));
   border: 4px solid transparent;
 }
 
 /* Signature / footer box similar to border-4 border-black p-4 bg-gray-50 */
 footer, .signature {
-  border: 4px solid #000;
+  border: 4px solid #485696;
   padding: 0.75rem;
   background: #f3f4f6;
   text-align: center;
@@ -181,9 +181,9 @@ footer, .signature {
 /* Page footer at the bottom of HTML */
 footer {
   margin-top: 1rem;
-  background: transparent;
+  background: #F3FFBD;
   border: none;
-  color: #6b7280;
+  color: #AD8A64;
 }
 footer p { margin: 0.25rem 0; }
 
