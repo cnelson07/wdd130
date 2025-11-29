@@ -40,10 +40,10 @@ header nav a {
   border: 2px solid transparent;
   border-radius: 6px;
   font-weight: 600;
-  color: #111827;
+  color: #AD8A64;
 }
 header nav a:hover {
-  background: #efefef;
+  background: #485696;
   border-color: #0AD3FF;
 }
 
@@ -58,7 +58,7 @@ header nav a:hover {
 #hero-box {
   border: 4px solid #0AD3FF;
   overflow: hidden;
-  background: #f9fafb;
+  background: #485696;
   aspect-ratio: 16 / 9;
 }
 #hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -164,7 +164,7 @@ img[alt*="People playing pickleball"] {
 #background {
   grid-column: 1 / -1;
   height: 60px;
-  background: linear-gradient(90deg, #485696(0,0,0,0.04), #0AD3FF(0,0,0,0.02));
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
   border: 4px solid transparent;
 }
 
