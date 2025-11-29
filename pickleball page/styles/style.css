@@ -1,104 +1,204 @@
-/* home-style.css
-   Expected minimal HTML structure:
-   <body>
-     <div class="site">
-       <nav class="top-nav">
-         <a class="nav-item">HOME</a>
-         <a class="nav-item">HOW TO PLAY</a>
-         <a class="nav-item">GEAR & COURTS</a>
-       </nav>
-
-       <main class="container">
-         <header class="hero"><h1>HOME</h1></header>
-
-         <section class="grid">
-           <div class="col left">
-             <div class="card image"></div>
-             <div class="card paragraph"></div>
-             <div class="card image"></div>
-           </div>
-
-           <div class="col right">
-             <div class="card paragraph"></div>
-             <div class="card image"></div>
-             <div class="card paragraph"></div>
-           </div>
-         </section>
-
-         <footer class="signature">SIGNATURE</footer>
-       </main>
-     </div>
-   </body>
+/* styles/style.css
+   Converted from the React/Tailwind-like layout into plain CSS.
 */
 
-/* Reset & base */
+/* --- Reset / base --- */
 * { box-sizing: border-box; }
-html,body { height:100%; margin:0; font-family: "Helvetica Neue", Arial, sans-serif; background:#fff; color:#111; }
+html,body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #f3f4f6; color: #111827; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* outer framed site to mimic the heavy wireframe border */
-.site { max-width: 920px; margin: 18px auto; border: 6px solid #000; background: #fff; }
-
-/* top nav (three buttons) */
-.top-nav { display:flex; border-bottom:6px solid #000; }
-.top-nav .nav-item {
-  flex:1;
-  text-align:center;
-  padding: 18px 6px;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:14px;
-  border-left:3px solid rgba(0,0,0,0.0); /* visual spacing */
+/* --- Outer container similar to "max-w-2xl mx-auto p-4 bg-white" --- */
+#content {
+  max-width: 672px; /* tailwind max-w-2xl = 42rem = 672px */
+  margin: 1.25rem auto; /* mx-auto, top/bottom spacing */
+  padding: 1rem; /* p-4 */
+  background: #ffffff; /* bg-white */
+  border-radius: 6px;
 }
-.top-nav .nav-item:first-child { border-left:0; }
-.top-nav .nav-item:not(:last-child) { border-right:3px solid #000; }
 
-/* main container */
-.container { padding: 18px; }
+/* --- Header (logo + nav) --- */
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#logo_link { display: block; margin-right: 0.5rem; }
+.logo { width: 72px; height: auto; display: block; object-fit: contain; }
 
-/* hero / title box */
-.hero {
-  border:6px solid #000;
-  padding: 18px 12px;
+/* header nav links (top-right nav) */
+header nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header nav a {
+  text-decoration: none;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #111827;
+}
+header nav a:hover {
+  background: #efefef;
+  border-color: #d1d5db;
+}
+
+/* --- Hero area --- */
+#hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+#hero-box {
+  border: 4px solid #000;
+  overflow: hidden;
+  background: #f9fafb;
+  aspect-ratio: 16 / 9;
+}
+#hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+#hero-msg {
+  padding: 1rem;
+}
+.home-title {
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+  color: #374151; /* gray-700 */
+  font-weight: 800;
+  letter-spacing: .18em; /* tracking-widest */
+}
+#hero-msg h4 { margin: 0 0 0.75rem 0; color: #6b7280; font-weight: 600; }
+
+/* button box / call to action */
+.button-box { margin-top: 0.5rem; }
+a.Learn\ More, a.Join, a[class~="Learn"] { 
+  /* selector covers anchors with class="Learn More" (space in class) and class="Learn More" typed differently */
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border: 3px solid #000;
+  border-radius: 8px;
+  font-weight: 700;
+  background: #ffffff;
+  color: #111827;
+}
+a.Learn\ More:hover, a[class~="Learn"]:hover { transform: translateY(-2px); }
+
+/* --- Main grid like the React grid (grid of cards and images) --- */
+main.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+
+/* Generic card styling similar to border-4 border-black p-6 bg-gray-50 */
+main.home-grid section,
+main.home-grid .card,
+main.home-grid .info-card {
+  border: 4px solid #000;
+  background: #f3f4f6;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image cards with square aspect ratio analogous to "aspect-square" */
+main.home-grid section img.card-img,
+main.home-grid .card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Provide explicit square blocks like aspect-square for some sections */
+main.home-grid .square {
+  aspect-ratio: 1 / 1;
+  display: block;
+  width: 100%;
+  background: #f9fafb;
+  position: relative;
+}
+
+/* Style the three primary card sections by targeting substrings in their class attributes
+   (works with class="Pickleball Paddle" etc.) */
+section[class*="Pickleball"],
+section[class*="Paddle"] {
+  /* first card */
+}
+section[class*="How"] {
+  /* second card */
+}
+section[class*="Gear"],
+section[class*="Courts"] {
+  /* third card */
+}
+
+/* The "message" section that contains extra text (your .msg) */
+section.msg {
+  grid-column: 1 / -1;
+  border: 4px solid #000;
+  padding: 1rem;
+  background: #f3f4f6;
+}
+
+/* Special image that appears between grid items (you used a multi-class on the img),
+   select it by matching its alt text substring */
+img[alt*="People playing pickleball"] {
+  width: 100%;
+  border: 4px solid #000;
+  display: block;
+}
+
+/* Background decorative element (if present) */
+#background {
+  grid-column: 1 / -1;
+  height: 60px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+  border: 4px solid transparent;
+}
+
+/* Signature / footer box similar to border-4 border-black p-4 bg-gray-50 */
+footer, .signature {
+  border: 4px solid #000;
+  padding: 0.75rem;
+  background: #f3f4f6;
   text-align: center;
-  margin: 12px 0 18px;
-}
-.hero h1 { margin:0; font-size:56px; letter-spacing:2px; font-weight:700; }
-
-/* two-column grid area */
-.grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items:start; }
-
-/* column stacks */
-.col { display:flex; flex-direction:column; gap:18px; }
-
-/* card styles (images and paragraph placeholders) */
-.card {
-  border:6px solid #000;
-  min-height:130px;
-  padding:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:#fff;
-}
-.card.image { min-height:160px; }      /* image placeholder taller */
-.card.paragraph { min-height:120px; }  /* paragraph block */
-
-/* signature footer */
-.signature {
-  margin-top:18px;
-  border-top:6px solid #000;
-  padding:14px;
-  border-left:6px solid #000;
-  border-right:6px solid #000;
-  border-bottom:6px solid #000;
-  text-align:left;
-  font-size:14px;
+  margin-top: 0.75rem;
+  border-radius: 4px;
 }
 
-/* responsive: single column for small screens */
-@media (max-width:740px){
-  .grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size:40px; }
-  .top-nav .nav-item { padding:12px; font-size:13px; }
+/* Page footer at the bottom of HTML */
+footer {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+}
+footer p { margin: 0.25rem 0; }
+
+/* --- Utilities & responsiveness (to mimic Tailwind responsive behavior) --- */
+@media (min-width: 720px) {
+  /* place hero image and hero message side-by-side on wider screens */
+  #hero { grid-template-columns: 1fr 1fr; }
+  main.home-grid { grid-template-columns: repeat(3, 1fr); }
+  section.msg { grid-column: 2 / 4; } /* try placing the message in larger layouts */
+}
+
+@media (max-width: 560px) {
+  #content { padding: 0.75rem; }
+  .home-title { font-size: 1.6rem; }
+  header nav { gap: 0.4rem; }
+  main.home-grid { grid-template-columns: 1fr; }
+  section.msg { grid-column: auto; }
 }
