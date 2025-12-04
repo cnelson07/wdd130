@@ -186,7 +186,7 @@ img[alt*="People playing pickleball"] {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #485696;
+  background-color: #AD8A64;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -194,20 +194,20 @@ img[alt*="People playing pickleball"] {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: #485696;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #F3FFBD;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #AD8A64;}
 
 /* Signature / footer box similar to border-4 border-black p-4 bg-gray-50 */
 footer, .signature {
